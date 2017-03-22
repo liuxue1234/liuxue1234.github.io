@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>选择符</title>
+  <style>
+  #p1{
+    font-size:20px;
+  }
+   .or li{
+     color:#f00;
+   }
+    .or>li{
+      color:#0f0;
+    }
+    .red{
+      color:red;
+    }
+    .blue{
+      color:blue;
+    }
+    h2.a+p{
+      color:#00f;
+    }
+    h3.b~p{
+      color:#0ff;
+    }
+    .blue em{
+      font-size:20px;
+    }
+    .center{
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h2 class="center">类选择符</h2>
+  <p class="red">类型选择符</p>
+  <p id="p1" class="blue">ID选择符</p>
+  <ul class="or">
+    <li>后代选择符</li>
+    <li></li>
+    <ul><li>
+      子代选择符
+    </li>
+    <li></li></ul>
+  </ul>
+ <h2 class="a">相邻</h2>
+  <p>相邻选择符</p>
+  <h3 class="b">兄弟</h3>
+  <p>兄弟选择符</p>
+  <p class="blue"><em>组合选择符</em><p>潘雪</p></p>
+</body>
+</html>
