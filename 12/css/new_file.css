@@ -39,7 +39,6 @@ nav{
 	color: #000000;
 	border-right: solid 1px rgba(0, 0, 0, 0.2);
 	border-left: solid;
-	transition:text-indent .5s;
 	position: relative;
 	z-index: 1;
 }
@@ -55,5 +54,5 @@ nav{
 }
 .menu li:hover a{
 	color: #fff;
-	
+	transition: .5s;
 }
