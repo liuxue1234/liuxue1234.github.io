@@ -8,10 +8,10 @@ nav{
 	
 }
 .menu{
+	
     margin-top: 20px;
 	background: orange;
-	font-size: 48px;
-  	
+	
   	text-align: center;
   	height: 48px;
 }
@@ -23,36 +23,67 @@ nav{
 .menu ul{
 	list-style: none;
 	display: inline-block;
-	margin: auto;
+    padding: 0;
+    margin: 0;
 }
 .menu ul li{	
+	display: inline-block;
 	float: left;
 	position: relative;
 	width: 150px;
 }
+
 .menu ul li a{
 	line-height: 50px;
-	font-family: "微软雅黑";
+	font-size: 20px;
 	text-align: left;
 	display: inline-block;
 	text-decoration: none;
 	color: #000000;
-	border-right: solid 1px rgba(0, 0, 0, 0.2);
-	border-left: solid;
+	border-left: solid 1px rgba(0, 0, 0, 0.2);
 	position: relative;
 	z-index: 1;
+	text-indent: -1px;
+	transition: all .5s;
 }
+
 .menu ul li a:hover{
-	font-family: "微软雅黑";
+	
 	text-align: left;
 	display: inline-block;
 	text-decoration: none;
 	color: white;
+	text-indent: 10px;
 }
-.menu li a:first-child{
-	border-left: solid 1px rgba(0, 0, 0, 0.2);
+
+.menu ul li a i{
+	color: #FFFFFF;
+	transform: scale(0);
+	position: relative;
+	right: 20px;
+	max-width:0px ;
+	transition:transform .5s;
 }
-.menu li:hover a{
-	color: #fff;
-	transition: .5s;
+.menu ul li a:hover i{
+	transform: scale(1);
+	max-width: 20px;
+}
+.menu ul li::after{
+	
+	content: "";
+	position: absolute;
+	color: #000000;
+	left: 20px;
+	right: 20px;
+	top: 10px;
+	bottom: 2px;
+	border-radius: 100%;
+	box-shadow: 2px -2px 2px 2px rgba(0,0,0,.4);
+	transition: box-shadow .5s;
+	z-index: -1;
+}
+.menu ul li:hover::after{
+	border-radius: 50%;
+	box-shadow: 2px 1px 2px 2px rgba(0,0,0,.6);
+	
 }
