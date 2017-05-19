@@ -1,0 +1,51 @@
+* {
+	box-sizing: border-box;
+}
+body{
+	background-image: url(../img/1.jpg);
+}
+.clearfix::after{
+	content: "";
+	display: table;
+	clear: both;
+}
+.war{
+	max-width: 1200px;
+	margin: auto;
+}
+header{
+	position: relative;
+	max-width: 1200px;
+	top: 50px;
+	margin:auto;
+}
+nav{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+ul{
+	list-style-type: none;
+	padding: 0;
+}
+
+
+.logo img{
+	width: 80px;
+	height: auto;
+}
+ul li{
+	float: left;
+	margin: 20px 30px;
+	
+}
+ul li a{
+	text-decoration: none;
+	padding: 20px;
+	border: 1px transparent;
+	transition: all .5s;
+	color: black;
+}
+ul li a:hover{
+	border: 1px solid black;
+}
