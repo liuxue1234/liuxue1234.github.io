@@ -39,14 +39,14 @@ ul li{
 	margin: 20px 30px;
 	
 }
-.war ul li a{
+.war  li a{
 	text-decoration: none;
 	padding: 20px;
 	border: 1px transparent;
 	transition: all .5s;
 	color: black;
 }
-.war ul li a:hover{
+.war .x1 li a:hover{
 	border: 1px solid black;
 }
 h2{
