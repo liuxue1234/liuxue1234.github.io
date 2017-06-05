@@ -1,0 +1,261 @@
+.clearfix::after{
+	content: "";
+	display: table;
+	clear: both;
+}
+* {
+    box-sizing: border-box;
+}
+body{
+    min-height: 1200px;
+	background: url(../img/banner.jpg) no-repeat center top;
+}
+ul{
+	list-style-type: none;
+	padding: 0px;
+}
+section{
+	min-height: 750px;
+	line-height: 3;
+}
+.top a{
+	display: inline-block;
+	text-decoration: none;
+	color: #fff;
+}
+.top a:hover{
+	color: #339BEB;
+	text-shadow: 2px 1px 1px rgba(0,0,0,.6);	
+	transition: all .6s;
+	
+}
+.top{
+	float: right;
+}
+.top ul{
+	list-style-type: none;
+	padding-top: 0;
+	margin: -75px 200px auto auto;
+	
+}
+.top li{
+	float: left;
+	margin: 20px;
+	
+}
+.top li:hover{
+	border: 1px rgba(255,255,255);
+}
+.logo img{
+	vertical-align: middle;
+	
+}
+.logo a{
+	text-decoration: none;
+	font-size: 3.6em;
+	vertical-align: middle;
+	color: white;
+}
+.logo:hover{
+	transition: all .3s;
+	text-shadow: 1px 1px 1px rgba(0,0,0,.8);
+}
+.logo {
+	float: left;
+	margin: 16px auto 10px 200px;
+
+}
+header{
+	width: 100%;
+	padding: 5px 0px;
+	background-color: rgba(0,0,0,.1);
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 999;
+	transition: all .5s;
+}
+header.on{
+	padding: 10px 0;
+	background-color: rgba(0,0,0,.6);
+}
+h1 span {
+	color: rgb(51,155,235);
+}
+h1{
+	color: white;
+}
+.banner {
+    text-align: center;
+    margin-top: 300px;
+    line-height: 2.5;
+}
+.banner h1{
+	text-shadow: 1px 2px 1px rgba(0,0,0,.6);
+}
+.banner p{
+	text-align: left;
+	width:750px;
+   display: block;
+   margin-left: 400px;
+   line-height: 1.8;
+   color: white;
+  
+}
+p span{
+	color: black;
+	background: rgba(194,218,226,.5);
+/*	display: inline-block;*/
+	height: 25px;
+	padding: 2px 4px;
+	cursor: pointer;
+}
+p span:hover{
+	background: rgba(194,218,226,.3);
+	transition: all .5s;
+}
+.about{
+	
+}
+.about h2{
+	text-align: center;
+	margin-top: 50px;
+}
+.about h2+p{
+	text-align: center;
+	margin-bottom: 80px;
+}
+.about ol {
+	left: 50px;
+}
+.about .img{
+	width: 49%;
+	float: left;
+}
+.about .img img{
+	width: 100%;
+	height: auto;
+}
+.about .note{
+	width: 49%;
+	float: right;
+	text-align: left;
+	height: auto;
+}
+.about .note p:first-child{
+	margin-top: 0;
+}
+.about .note ol{
+	padding: 0;
+	list-style: none;
+	counter-reset: a;
+}
+.about .note li{
+	counter-increment: a;
+}
+.about .note li::before{
+	content: counter(a);
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	/*background-color: #000;
+	color: #fff;*/
+	text-align: center;
+	line-height: 20px;
+	border-radius: 20px;
+	border: 1px dashed #000;
+	margin-right: 20px;
+	/*transition: transform .5s;*/
+}
+.about .note li:hover::before{
+	/*transform: translate(10px) rotate(360deg);*/
+	animation: go 2s;
+}
+@keyframes go{
+	0%{
+		transform: translate(20px);
+	}
+	10%{
+		transform: translate(-20px);
+	}
+	20%{
+		transform: translate(15px);
+	}
+	30%{
+		transform: translate(-15px);
+	}
+	40%{
+		transform: translate(10px);
+	}
+	50%{
+		transform: translate(-10px);
+	}
+	60%{
+		transform: translate(5px);
+	}
+	70%{
+		transform: translate(-5px);
+	}
+	80%{
+		transform: translate(3px);
+	}
+	90%{
+		transform: translate(-3px);
+	}
+	100%{
+		transform: translate(0px);
+	}
+}
+
+
+.service{
+	position: relative;
+	min-height: 600px;
+	background: url(../img/desktop.jpg) center center no-repeat;
+	background-size: cover;
+}
+.service .container h2,
+.service .container p{
+	text-align: center;
+}
+.service li{
+	float: left;
+	width: 48%;
+	margin-right: 4%;
+	text-align: right;
+	cursor: pointer;
+	min-height: 80px;
+}
+.service li::after{
+	content: "";
+	display: table;
+	clear: both;
+}
+.service li:nth-child(2n){
+	margin-right: 0px;
+	text-align: left;
+	
+}
+.service li i{
+	float: right;
+	padding: 4px 0px 12px 20px;
+	transition: transform .5s,color .5s;
+}
+.service li:hover i{
+	transform: scale(1.2);
+	color: #339BEB;
+}
+.service li:nth-child(2n) i{
+	float: left;
+	padding: 4px 20px 12px 0px;
+}
+.service li h3{
+	display: inline-block;
+	margin: 0px;
+}
+.service li p{
+	text-align: right;
+}
+.service li:nth-child(2n) p{
+	text-align: left;
+}
