@@ -237,6 +237,7 @@ p span:hover{
 	
 }
 .service li i{
+	margin-top: 15px;
 	float: right;
 	padding: 4px 0px 12px 20px;
 	transition: transform .5s,color .5s;
@@ -296,4 +297,14 @@ p span:hover{
 	top: 50%;
 	right: 5%;
 	bottom: 5%;
+	background-color: rgba(255,255,255,.8);
+	padding: 10px;
+}
+.project figure figcaption .time{
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	background-color:#339BEB;
+	font-size: 0.8em;
+	text-align: center;
 }
