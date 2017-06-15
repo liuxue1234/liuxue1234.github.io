@@ -352,3 +352,6 @@ p span:hover{
 ::-moz-placeholder{
 	color: #000;
 }
+footer{
+	text-align: center;
+}
