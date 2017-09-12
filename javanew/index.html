@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			#d{
+				font-size: 14px;
+				text-indent: 2em;
+				line-height: 1.5em;
+			}
+		</style>
+	</head>
+	<body>
+		<a id="big" href="javascript:">大</a>&nbsp;<a id="small" href="javascript:">小</a>
+		<div id="d">
+			<p>
+Eclipse 是一个开放源代码的、基于Java的可扩展开发平台。就其本身而言，它只是一个框架和一组服务，用于通过插件组件构建开发环境。
+当我们安装使用时，会出现eclipse启动不了，出现“Java was started but returned exit code=13......”的问题，下面说下，如何解决。</p>
+		</div>
+		<script type="text/javascript">
+			var d=document.getElementById("d");
+			var big=document.getElementById("big");
+			var small=document.getElementById("small");
+			
+			var i=14;
+			big.onclick=function()	{
+				i+=2;
+				d.style.fontSize=i+'px';
+			}
+			small.onclick=function(){
+				i-=2;
+				d.style.fontSize=i+"px";
+			}
+		</script>
+	</body>
+</html>
