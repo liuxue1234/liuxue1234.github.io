@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link id="a" rel="stylesheet" type="text/css" href="css/test.css"/>
+	</head>
+	<body>
+		<a id="one" href="javascript:">皮肤1</a>
+		<a id="two" href="javascript:">皮肤2</a>
+		<script type="text/javascript">
+			var a=document.getElementById("a");
+			var one=document.getElementById("one");
+			var two=document.getElementById("two");
+			one.onclick=function(){
+				a.href="css/new_file.css";
+			}
+			two.onclick=function(){
+				a.href="css/new_file2.css";
+			}
+		</script>
+	</body>
+</html>
