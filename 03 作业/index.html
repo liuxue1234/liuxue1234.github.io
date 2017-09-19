@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+		#banner{
+		width: 600px;
+		height: 360px;
+		margin: 0;
+		text-align: -999em;
+		}
+		</style>
+	</head>
+	<body>
+	<div id="banner" class="">
+		
+	</div>
+	<script>
+	var st="1.jpg|2.jpg|3.jpg|4.jpg";
+	var str=st.split("|");
+	console.log(str);
+	var bd=document.getElementById("banner");
+	var num=parseInt(Math.random()*4);
+	bd.style.backgroundImage="url(img/"+str[num]+")";
+	</script>
+	
+		<!--<script>
+		function change(x){
+		var f =parseFloat(x);
+		if(isNaN(f)){
+		console.log("不是数字");
+		return;
+		}
+		f = Math.round(x*100)/100;
+		return f;
+		}
+		console.log(change(12.5656));
+		</script>-->
+		
+		<!--<script>
+		console.log("abc".length);
+		var s=new String("abc");
+		console.log("abc"[0]);
+		</script>-->
+	</body>
+</html>
