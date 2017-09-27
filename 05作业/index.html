@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+<link rel="stylesheet" type="text/css" href="css/new_file.css"/>
+	<body>
+		<div class="game">
+			<h3>猜数字游戏</h3>
+			<div class="input">
+				<input type="number" id="num"/>
+				<input type="button" id="guess" value="提交" />
+				<input type="button" id="repeat" value="重来" />
+			</div>
+			<div class="resultPanel">
+				<div class="times">剩余次数：<span></span><br></div>
+				<div class="info">猜测历史：<br><span></span></div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var numRange=10,
+			    renum=Math.floor(Math.random()*(numRange+1)),
+			    times=6,
+			    numTemp=0,
+			    oNum=document.querySelector(".game #num"),
+			    obtn=document.querySelector(".game #guess"),
+			    ore=document.querySelector(".game #repeat"),
+			    oTimes=document.querySelector(".game .times span"),
+			    oInfo=document.querySelector(".game .info span");
+			    
+			console.log(renum);
+			obtn.addEventListener("click",checkGuess);
+			ore.addEventListener("click",repeatGame);	
+			oTimes.innerHTML=times;
+			
+			oNum.setAttribute('placeholder',"0-"+numRange+"整数，"+times+"次机会");
+			
+			function checkGuess () {
+				numTemp=parseInt(oNum.value);
+				
+				if (isNaN(numTemp)) {
+					oInfo.innerHTML+="该次输入"+numTemp+"不是数字，我非常怀疑你的智商。<br>";
+				}
+				
+				if (times-->0) {
+					if (numTemp>renum) {
+						oInfo.innerHTML+="这次猜的"+numTemp+",有点偏大<br>";
+					}else if(numTemp<renum){
+						oInfo.innerHTML+="这次猜的"+numTemp+",有点偏小<br>";
+					}else if(numTemp==renum){
+						oInfo.innerHTML+="恭喜猜对了，正确答案正是"+numTemp+"。<br>";
+						closeGame();
+					}else{
+						oInfo.innerHTML+="非正常情况<br>";
+					}
+				}
+				
+				if(times<0){
+					oInfo.innerHTML+="次数用完，游戏结束！<br>";
+					closeGame();
+				}
+				
+				oTimes.innerHTML=times;
+				oNum.value="";
+				oNum.focus();
+			}
+			
+			function closeGame () {
+				oNum.disabled=true;
+				obtn.style.display="none";
+				ore.style.display="block";
+			}
+			
+			function repeatGame () {
+			    renum=Math.floor(Math.random()*(numRange+1));
+			    console.log(renum);
+			    times=6;
+			    oTimes.innerHTML=times;
+			    oNum.disabled=false;
+			    obtn.style.display="block";
+				ore.style.display="none";
+				oInfo.innerHTML="新一轮游戏开始，请猜数字！<br>";
+				oNum.focus();
+			}
+		</script>
+		</div>
+	</body>
+
+</html>

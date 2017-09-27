@@ -1,0 +1,61 @@
+body{
+	
+*,
+			*::before,
+			*::after{
+				box-sizing: border-box;
+			}
+			.game{
+				width: 250px;
+				min-height: 240px;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%,-50%);
+			}
+			.game h3{
+				text-align: center;
+			}
+			.game .guess{
+				height: 40px;
+				position: relative;
+			}
+			.guessNumberContainer .inputGroup input{
+				border: none;
+				outline: none;
+				background: none;
+				border: 1px solid #000;
+				height: 30px;
+				position: absolute;
+				cursor: pointer;
+			}
+			.guessNumberContainer .inputGroup input[disabled]{
+				border: 1px solid #f00;
+			}
+			.guessNumberContainer .inputGroup #num{
+				width: 200px;
+				height: 30px;
+				border-radius: 20px 0 0 20px;
+				left: 0;
+				text-indent: 1em;
+			}
+			.guessNumberContainer .inputGroup #guess,
+			.guessNumberContainer .inputGroup #repeat{
+				width: 50px;
+				border-radius: 0 20px 20px 0;
+				right: 0;
+				border-left-width: 0px;
+			}
+			.guessNumberContainer .inputGroup #repeat{
+				display: none;
+			}
+			.guessNumberContainer .resultPanel{
+				max-height: 200px;
+				overflow-y: auto;
+				font-size: 16px;
+			}
+			
+			
+			
+			
+			}
