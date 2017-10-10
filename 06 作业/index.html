@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+		#clock{
+		width: 400px;
+		height: 400px;
+		position: relative;
+		background-size: 100%;
+		}
+		#hour{
+		width: 1.4%;
+		height: 16%;
+		background-color: #000;
+	    position: absolute;
+		left: 49.3%;
+		top: 34%;
+		-webkit-transform-origin: 50% 100%;
+		}
+		#min{
+		width: 1%;
+		height: 26%;
+		background-color: #000;
+	    position: absolute;
+		left: 49.5%;
+		top: 24%;
+		-webkit-transform-origin: 50% 100%;
+		}
+		#sec{
+		width: 0.6%;
+		height: 32%;
+		background-color: #000;
+	    position: absolute;
+		left: 49.7%;
+		top: 18%;
+		-webkit-transform-origin: 50% 100%;
+		}
+		#time{
+		position: absolute;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="clock">
+			<div id="hour"></div>
+			<div id="min"></div>
+			<div id="sec"></div>
+			<div id="time">
+				
+			</div>
+		</div>
+		<script type="text/javascript">
+			var da;
+			var oClock=document.getElementById("clock");
+			var oHour=document.getElementById("hour");
+			var oMin=document.getElementById("min");
+			var oSec=document.getElementById("sec");
+			function runtime(){
+			da=new Date();
+			var sec=da.getSeconds()*6;
+			var min=(da.getMinutes()+da.getSeconds()/60)*6;
+			var hour=(da.getHours()+da.getMinutes()/60+da.getSeconds()/3600)*30;
+			oHour.style.webkitTransform="rotate("+hour+"deg)";
+				oMin.style.webkitTransform="rotate("+min+"deg)";
+				oSec.style.webkitTransform="rotate("+sec+"deg)";
+			}
+			setInterval("runtime()",100);
+			
+			
+			var date;
+var t=document.getElementById("time");
+function checktime(num){
+				if(num<10){
+					num="0"+num;
+				}
+				return num;
+			}
+function startime(){
+				date=new Date();
+				t.innerHTML=checktime(date.getHours())+":"+checktime(date.getMinutes())+":"+checktime(date.getSeconds());
+			
+			}
+
+setInterval("startime()",100);
+			</script>
+			
+	</body>
+</html>
