@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	</head>
+	<body>
+		<h1 class="title">
+			Kamen Rider！
+		</h1>
+		<h2 class="text">
+			kuuga#Agito#Ryuki#Faiz#Blade#Hibiki#Kabuto#DEN-O#Kiva#Decade#Double#OOO#Fourze#WIZARD#Gaim#Drive#Ghost#Ex-Aid#Build!
+		</h2>
+		<script type="text/javascript">
+			function typeText(x,speed,z){
+				var oTitle=x;
+				var str=oTitle.innerText;
+				var i=0;
+				var loop=loop||false;
+				oTitle.innerText="";
+	
+				var a=setInterval(function () {
+					if(i<str.length){
+						oTitle.innerText+=str[i];
+					}else{
+						if(z){
+						i=-1;
+						oTitle.innerText="";
+						}else{
+							clearInterval(a);
+						}
+					}
+					i++;
+				},speed);
+			}
+			
+			var oH1=document.querySelector(".title");
+			var oH2=document.querySelector(".text");
+			typeText(oH1,100);
+			typeText(oH2,200,true);
+		</script>
+	</body>
+</html>
