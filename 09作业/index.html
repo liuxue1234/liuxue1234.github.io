@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/new_file.css"/>
+	</head>
+	<body>
+		<div class="widow">
+			
+			<input type="text" name="" id="t1" placeholder="name" />
+			<input type="text" name="" id="t2" placeholder="pwd" />
+			<input type="submit" name="" id="submit" value="登录" />
+		</div>
+		<script type="text/javascript">
+			var otext1 = document.getElementById("text1");
+			var otext2 = document.getElementById("text2");
+			var osubmit = document.getElementById("submit");
+			
+			document.onkeydown=function(event){
+		        var event=event||window.event;
+		        document.getElementById("name").innerHTML=event.keyCode;  
+		        document.getElementById("pwd").innerHTML=event.keyCode; 
+       }
+				
+				//鼠标监听
+			osubmit.addEventListener("click",function () {
+				if(otext1.value!=""&&otext2.value!=""){
+					alert("登陆成功");
+				}
+				else
+				alert("请输入用户名及密码.");
+		});		
+			
+		</script>
+	</body>
+</html>
