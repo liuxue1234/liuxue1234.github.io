@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>表格</title>
+		<link rel="stylesheet" type="text/css" href="css/new_file.css"/>
+	</head>
+
+	<body>
+		<div class="news">
+			id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="id" class="text" /><br>
+			name&nbsp;<input type="text" id="name" class="text" /><br>
+			sex&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="sex" class="text" /><br>
+			city&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="city" class="text" /><br>
+			<input type="button" name="add" id="add" value="添加" />
+		</div>
+		<div class="table">
+			<table border="1" cellspacing="0" cellpadding="0" class="menu">
+				<thead>
+					<th>id</th>
+					<th>name</th>
+					<th>sex</th>
+					<th>city</th>
+					<th id="del"><a href="#">全部刪除</a></th>
+				</thead>
+			</table>
+		</div>
+		<script type="text/javascript">
+			var oTab = document.querySelector('.menu');
+			var oId = document.querySelector('#id');
+			var oName = document.querySelector('#name');
+			var oSex = document.querySelector('#sex');
+			var oCity = document.querySelector('#city');
+			var oBtn = document.querySelector('#add');
+			var oDel = document.querySelector('#del');
+			var oTd, oTr;
+			
+			oBtn.onclick = function() {
+				if(oId.value != "" && oName.value != "" && oSex.value != "" && oCity.value != "") {
+					add();
+					oTr = document.querySelectorAll('tr');
+					oTd = document.querySelectorAll('td');
+					text(oTr.length, oId.value, oName.value, oSex.value, oCity.value);
+					oId.value = "";
+					oName.value = "";
+					oSex.value = "";
+					oCity.value = "";
+				}
+			}
+			
+			oDel.onclick = function() {
+				oTr = document.querySelectorAll('tr');
+				if(oTr.length != 0){
+					for(var i = 1; i < oTr.length; i++){
+						oTr[i].parentNode.removeChild(oTr[i]);
+					}
+				}
+			}
+			
+			function add() {
+				var nodeTr = document.createElement('tr');
+				var nodeTd = new Array();
+				for(var i = 0; i < 5; i++) {
+					nodeTd[i] = document.createElement('td');
+					nodeTr.appendChild(nodeTd[i]);
+				}
+				oTab.appendChild(nodeTr);
+			}
+			
+			function text(i, id, name, sex, city, del) {
+				oTd[(i - 2) * 5].innerHTML = id;
+				oTd[(i - 2) * 5 + 1].innerHTML = name;
+				oTd[(i - 2) * 5 + 2].innerHTML = sex;
+				oTd[(i - 2) * 5 + 3].innerHTML = city;
+				oTd[(i - 2) * 5 + 4].innerHTML = "<a href=" + "#" + " onclick=" + "remove(this)" + ">" + "刪除" + "</a>";
+			}
+			
+			function remove(e) {
+				var oA = e.parentNode.parentNode;
+				oA.parentNode.removeChild(oA);
+			}
+		</script>
+	</body>
+
+</html>
