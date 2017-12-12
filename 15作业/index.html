@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			[data-theme = 'a']{
+				background: url(img/01.jpg);
+				background-size: 100%;
+			}
+			[data-theme = 'b']{
+				background: url(img/02.jpg);
+				background-size: 100%;
+			}
+			[data-theme = 'c']{
+				background: url(img/03.jpg);
+				background-size: 100%;
+			}
+			.text{
+				width: 360px;
+				height: 640px;
+				background-size: 100%;
+				color: white;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="like">
+		<button id="a" style="background-color:lightblue ;color: white;">Nero</button>
+	   <button id="b" style="background-color: lawngreen;color: white;">Dante</button>
+	   <button id="c" style="background-color: red;color: white;">Virgil</button>
+	   <div class="text" >
+	   
+	   </div>	
+		</div>
+	   
+	   <script type="text/javascript">
+	   	var oGreen = document.getElementById("a");
+	   	var oBlue = document.getElementById("b");
+	   	var oYellow = document.getElementById("c");
+	   	var oText = document.querySelector('.text');
+	   	
+	   	var curTheme = localStorage.getItem('theme');
+	   	
+	   	if(curTheme!=null) 
+	   	{
+	   		oText.dataset.theme = curTheme;
+	   	}
+	   	else{
+	   		console.log("Error");
+	   	}
+	   	
+	   	oBlue.addEventListener('click',setTheme);
+	   	oGreen.addEventListener('click',setTheme);
+	   	oYellow.addEventListener('click',setTheme);
+	   	
+	   	function setTheme () {
+	   		var target = event.target;
+	   		var id = target.id;
+	   		oText.dataset.theme = id;
+	   		localStorage.setItem('theme',id);
+	   	}
+	   </script>
+	</body>
+</html>
