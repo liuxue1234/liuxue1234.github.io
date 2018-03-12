@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<div id="app">
+			<h1 :title="url">{{hi}}</h1>
+			<input type="button" value="按钮" v-on:click="clickIt" />
+		</div>
+		<script type="text/javascript">
+			//简单的Vue程序
+			var app=new Vue({
+				el:"#app",
+				data:{
+					hi:"hello world",
+					url:"http://www.baidu.com",
+				},
+				methods:{
+					clickIt:function(){
+						console.log(this.url);
+					}
+				}
+			});
+			//指令  v-bind v-on
+		</script>
+	</body>
+</html>

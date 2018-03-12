@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<div id="app">
+			<h1 :title="url" >{{hi}}</h1>
+			<input type="button"  value="按钮" v-on:dblclick="clickIt"/>
+			<input type="button"  value="鼠标移动" @mouseover="clickIt"/>
+			<input type="text"  value="" @keyup.enter="clickIt" />
+			<input type="text"  value="" />
+		</div>
+		<script type="text/javascript">
+			var app=new Vue({
+				el:"#app",
+				data:{
+					hi:"hello",
+					url:"http://www.baidu.com"
+				},
+				methods:{
+					clickIt:function(){
+						console.log(this.url);
+					},
+					move:function(){
+						console.log(this.url);
+					},
+					clickIt:function(){
+						console.log(this.url);
+					}
+				}
+			});
+		</script>
+	</body>
+</html>
